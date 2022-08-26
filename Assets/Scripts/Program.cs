@@ -21,9 +21,6 @@ namespace Rpg
         {
             Balance balance = new GetCharactersBalans("MyJson.json").GetBalans();
 
-            // GetCharactersBalans b = new GetCharactersBalans("MyJson.json");
-            // b.CreateJsonBalansFromExample();
-
             IWeaponsFactory WeaponsFactory = new WeaponsFactory(balance);
             
             ICharatersFactory MainCharacter = new CharactersFactory(balance, new DamageCalculator(), WeaponsFactory);
@@ -61,4 +58,12 @@ namespace Rpg
             WeaponController = new WeaponController();
         }
     }
+
+    // public class FactoryKeeper
+    // {
+    //     Balance balance = new GetCharactersBalans("MyJson.json").GetBalans();
+    //
+    //     IWeaponsFactory   WeaponsFactory = new WeaponsFactory(balance);
+    //     ICharatersFactory MainCharacter  = new CharactersFactory(balance, new DamageCalculator(), WeaponsFactory);
+    // }
 }

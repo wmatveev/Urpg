@@ -39,7 +39,6 @@ namespace RPG.Weapons.WeaponsFactory
 
                 default:
                     throw new Exception("Weapon not found");
-                    break;
             }
 
             return weapon;

@@ -1,0 +1,54 @@
+{
+  "PlayerBalance": {
+    "Player1": {
+      "Stats": {
+        "Power": 5,
+        "Energy": 5,
+        "Agility": 5,
+        "Endurance": 5,
+        "DamageProtection": 5,
+        "MaxHealth": 100
+      },
+      "AvailableWeapons": [
+        "Makarov"
+      ]
+    }
+  },
+  "EnemyBalance": {
+    "Enemy1": {
+      "Stats": {
+        "Power": 5,
+        "Energy": 5,
+        "Agility": 5,
+        "Endurance": 5,
+        "DamageProtection": 5,
+        "MaxHealth": 100
+      },
+      "AvailableWeapons": [
+        "Makarov",
+        "AK47",
+        "DesertEagle"
+      ]
+    }
+  },
+  "Weapons": {
+    "Makarov": {
+      "Type" : "Gun",
+      "CountCartridges" : 8,
+      "Range" : 50,
+      "ShotDamage" : 10
+    },
+    "DesertEagle": {
+      "Type" : "Gun",
+      "CountCartridges" : 9,
+      "Range" : 100,
+      "ShotDamage" : 15
+    },
+    "AK47": {
+      "Type" : "AutomaticRifle",
+      "CountCartridges" : 30,
+      "Range" : 200,
+      "ShotDamage" : 20
+    }
+  }
+}
