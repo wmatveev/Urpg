@@ -36,7 +36,7 @@
       "Type" : "Gun",
       "CountCartridges" : 8,
       "Range" : 50,
-      "ShotDamage" : 10
+      "ShotDamage" : 15
     },
     "DesertEagle": {
       "Type" : "Gun",
