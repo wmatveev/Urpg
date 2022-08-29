@@ -5,6 +5,7 @@ namespace RPG.Character
 {
     public interface IHealthStatus
     {
+        event Action<Damage> OnHit;
         event Action<Damage> OnDie;
 
         bool IsAlive       { get; }     // Возвращаем, жив ли персонаж
@@ -19,7 +20,7 @@ namespace RPG.Character
 
         /// Нанести удар
         void DealDamage(Damage damage);
-        void DealDamage(IWeapon attackersWeapon, Stats statsTarget);
+        void DealDamage(IWeapon attackersWeapon);
         
         /// Исцеляем повреждения
         void HealDamage(int amount);

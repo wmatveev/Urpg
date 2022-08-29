@@ -1,9 +1,12 @@
+using System;
 using System.Collections.Generic;
+using Rpg.Target;
 
 namespace RPG.Weapons
 {
     public class WeaponController : IWeaponController
     {
+        public event Action<IWeapon> OnAttacked;
         public List<IWeapon> listOfWeapons { get; }
         public IWeapon CurrentWeapon { get; private set; }
 
@@ -33,6 +36,13 @@ namespace RPG.Weapons
         public void SelectWeapon(int index)
         {
             throw new System.NotImplementedException();
+        }
+
+        public void Attack(ITarget target)
+        {
+            // TODO: CurrentWeapon.Shoot to tareget
+            target.Health.DealDamage(CurrentWeapon);
+            OnAttacked?.Invoke(CurrentWeapon);
         }
     }
 }

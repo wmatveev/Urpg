@@ -26,7 +26,7 @@ namespace RPG.Character.CharacterCreationFactory
 
             if (_balance.PlayerBalance.TryGetValue(idCharacter, out var playerData))
             {
-                Character = new Rpg.Character(playerData.Stats, _damageCalculator);
+                Character = new Rpg.Character(idCharacter, playerData.Stats, _damageCalculator);
 
                 // Бежим по списку оружия из json и создаем его
                 foreach (string i in playerData.AvailableWeapons) {
@@ -40,7 +40,7 @@ namespace RPG.Character.CharacterCreationFactory
             }
             else if (_balance.EnemyBalance.TryGetValue(idCharacter, out var enemyData))
             {
-                Character = new Rpg.Character(enemyData.Stats, _damageCalculator);
+                Character = new Rpg.Character(idCharacter, enemyData.Stats, _damageCalculator);
 
                 // Бежим по списку оружия из json и создаем его
                 foreach (string i in enemyData.AvailableWeapons) {

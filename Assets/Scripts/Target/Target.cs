@@ -1,7 +1,7 @@
 namespace Rpg.Target
 {
-    public class Target : ITarget
-    {
-        
-    }
+    // public class Target : ITarget
+    // {
+    //     
+    // }
 }

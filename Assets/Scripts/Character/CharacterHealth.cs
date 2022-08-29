@@ -1,4 +1,5 @@
 using System;
+using JetBrains.Annotations;
 using RPG.Weapons;
 using RPG.Weapons.DamageCalculation;
 
@@ -6,6 +7,8 @@ namespace RPG.Character
 {
     public class CharacterHealth : IHealthStatus
     {
+        [CanBeNull]
+        public event Action<Damage> OnHit;
         public event Action<Damage> OnDie;
         
         private int _injuries;               // Количество повреждения
@@ -35,11 +38,16 @@ namespace RPG.Character
         }
 
         /// Нанести удар
-        public void DealDamage(IWeapon attackersWeapon, Stats statsTarget)
+        public void DealDamage(IWeapon attackersWeapon)
         {
-            _injuries += _calculator.GetDamage(attackersWeapon, statsTarget);
-            // if (_injuries > MaxHealth)
-            //     Death(damage);
+            _injuries += _calculator.GetDamage(attackersWeapon, _stats);
+            if (_injuries > MaxHealth)
+            {
+                // TODO: привести к OnDie!!!
+                IsAlive = false;
+                OnDie?.Invoke(new Damage());
+            }
+                //Death(damage);
         }
 
         /// Исцеляем повреждения
