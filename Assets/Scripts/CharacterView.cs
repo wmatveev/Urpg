@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Rpg;
+using RPG.Character;
 using RPG.Weapons;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,7 +10,7 @@ using Random = System.Random;
 
 public class CharacterView : MonoBehaviour, IPointerClickHandler
 {
-    public event Action<Character> OnCharacterClicked;  
+    public event Action<Character> OnCharacterClicked;
     public Character Character { get; private set; }
     
     private GameObject objBullet;

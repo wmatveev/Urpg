@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using RPG.Character;
 using RPG.Character.CharacterCreationFactory;
 using Rpg.TurnBased;
 using RPG.Weapons.DamageCalculation;
@@ -9,10 +10,12 @@ using UnityEngine;
 
 namespace Rpg.Initialization
 {
+    // Создаем класс Initializator, в котором инициализируем все начальные объекты + вычитываем баланс
     public class Initializator : MonoBehaviour
     {
+        // "MyJson.json" загружаем из Ассетов, чтобы смогли найти и прочитать файл с любой платформы
         [SerializeField]
-        private TextAsset _balanceFile;// = "MyJson.json";
+        private TextAsset _balanceFile;
 
         [SerializeField]
         private TurnController _turnController;
@@ -27,14 +30,20 @@ namespace Rpg.Initialization
         private TurnQueue _turnQueue;
         private List<Character> _controlables = new List<Character>();
 
+
         void Awake()
         {
+            // Вычитываем баланс
             var balanceLoader = new TextAssetBalanceLoader(_balanceFile);
+
             _turnQueue = new TurnQueue();
+
             balanceLoader.GetBalance((balance) =>
             {
                 CreateFactories(balance);
+
                 _turnController.Init(_turnQueue, _controlables);
+
                 InitCharacter("Player1", _hero, true);
                 InitCharacter("Enemy1", _enemy, false);
             });
@@ -42,28 +51,34 @@ namespace Rpg.Initialization
 
         void InitCharacter(string id, CharacterView view, bool isControlable)
         {
+            // Создаем персонажа
             Character character = _charactersFactory.CreateCharacter(id);
             if (isControlable)
             {
                 _controlables.Add(character);
             }
+
             view.Init(character);
-            view.OnCharacterClicked += OnCharacterSelected;
+
+            _turnController.SubscriptionByClick(view);
+
             character.Health.OnHit += (dmg) =>
             {
                 Debug.Log($"{id} was hitted!");
             };
+
+            // Добавляем в очередь
             _turnQueue.Enqueue(character);
         }
 
-        private void OnCharacterSelected(Character character)
-        {
-            _turnController.Interact(character);
-        }
+        // private void DestroyCharacterView(Damage obj)
+        // {
+        //     Destroy(_enemy.gameObject);
+        // }
 
         private void CreateFactories(Balance balance)
         {
-            _weaponsFactory = new WeaponsFactory(balance);
+            _weaponsFactory    = new WeaponsFactory(balance);
             _charactersFactory = new CharactersFactory(balance, new DamageCalculator(), _weaponsFactory);
         }
     }

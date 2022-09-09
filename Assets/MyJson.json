@@ -22,7 +22,7 @@
         "Agility": 5,
         "Endurance": 5,
         "DamageProtection": 5,
-        "MaxHealth": 100
+        "MaxHealth": 20
       },
       "AvailableWeapons": [
         "Makarov",

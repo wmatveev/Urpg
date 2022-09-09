@@ -11,18 +11,27 @@ namespace Rpg.TurnBased
         private Button _btnSkip;
         [SerializeField]
         private Text _lblTurn;
-        
+
         private List<Character> _controlables;
+
         private TurnQueue _queue;
-        private GameTurn _currentTurn;
-        private bool _isPlayerTurn;
+        private GameTurn  _currentTurn;
+        private bool      _isPlayerTurn;
 
         public void Init(TurnQueue queue, List<Character> controlables)
         {
             _controlables = controlables;
-            _queue = queue;
+            _queue        = queue;
+
             _queue.OnTurnChanged += OnTurnChanged;
+
             _btnSkip.onClick.AddListener(OnSkip);
+        }
+        
+        // Подписка на событие нажатия на персонажа
+        public void SubscriptionByClick(CharacterView view)
+        {
+            view.OnCharacterClicked += Interact;
         }
 
         private void OnSkip()
@@ -34,6 +43,7 @@ namespace Rpg.TurnBased
         {
             _currentTurn = turn;
             _lblTurn.text = $"Turn of {turn.Owner.Id} HP:{turn.Owner.Health.CurrentHealth}";
+
             if (_controlables.Contains(turn.Owner))
             {
                 StartPlayerControls(turn);
@@ -57,7 +67,7 @@ namespace Rpg.TurnBased
             _btnSkip.gameObject.SetActive(true);
         }
 
-        public void Interact(Character character)
+        private void Interact(Character character)
         {
             if (_currentTurn.Owner != character && _isPlayerTurn)
             {
@@ -70,5 +80,6 @@ namespace Rpg.TurnBased
             _isPlayerTurn = false;
             _btnSkip.gameObject.SetActive(false);
         }
+
     }
 }

@@ -3,6 +3,7 @@ using Rpg.Target;
 
 namespace Rpg.TurnBased
 {
+    // Игровой ход
     public class GameTurn
     {
         public Character Owner { get; }
