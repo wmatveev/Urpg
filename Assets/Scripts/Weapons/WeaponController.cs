@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
-using RPG.Character;
 using Rpg.Target;
-using TMPro;
+using RPG.Weapons.DamageCalculation;
 
 namespace RPG.Weapons
 {
@@ -49,10 +48,10 @@ namespace RPG.Weapons
 
         public void Attack(ITarget target)
         {
-            Damage damage;
-            
+            Damage damage = new Damage(_character, target, CurrentWeapon);
+
             // TODO: CurrentWeapon.Shoot to tareget
-            target.Health.DealDamage(CurrentWeapon);
+            target.Health.DealDamage(damage);
             OnAttacked?.Invoke(CurrentWeapon);
         }
     }

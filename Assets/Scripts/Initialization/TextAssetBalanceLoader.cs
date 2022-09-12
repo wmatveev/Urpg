@@ -15,6 +15,12 @@ namespace Rpg.Initialization
 
         public void GetBalance(BalanceLoadCallback onBalance)
         {
+            // Аналог нижней записи
+            // if (onBalance != null)
+            // {
+            //     onBalance(JsonConvert.DeserializeObject<Balance>(_textAsset.text));
+            // }
+
             onBalance?.Invoke(JsonConvert.DeserializeObject<Balance>(_textAsset.text));
         }
     }

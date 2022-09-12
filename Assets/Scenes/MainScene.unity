@@ -358,10 +358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73bea8ef4a964d06be88217928db929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainHero: {fileID: 1474668908}
-  _animator: {fileID: 353019893}
-  _bullet: {fileID: 8822615919279876226, guid: 1fcef400043214c0db94066c20edc45c, type: 3}
-  _bulletSpawnPoint: {fileID: 180920402}
 --- !u!95 &353019893
 Animator:
   serializedVersion: 3
@@ -859,7 +855,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -1, y: -49}
-  m_SizeDelta: {x: 454.3314, y: 65.05701}
+  m_SizeDelta: {x: 693.73, y: 65.05701}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326458212
 MonoBehaviour:

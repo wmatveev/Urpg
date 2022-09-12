@@ -2,6 +2,7 @@ using System;
 using JetBrains.Annotations;
 using RPG.Weapons;
 using RPG.Weapons.DamageCalculation;
+using UnityEngine;
 
 namespace RPG.Character
 {
@@ -11,7 +12,8 @@ namespace RPG.Character
         public event Action<Damage> OnHit;
         public event Action<Damage> OnDie;
         
-        private int _injuries;               // Количество повреждения
+        /// Количество повреждения
+        private int _injuries;               
         private readonly Stats _stats;
         private readonly IDamageCalculator _calculator;
         
@@ -32,22 +34,18 @@ namespace RPG.Character
         /// Нанести удар
         public void DealDamage(Damage damage)
         {
-            _injuries += _calculator.GetDamage(damage, _stats);
-            if (_injuries > MaxHealth)
-                Death(damage);
-        }
+            // Суммируем количество повреждения
+            _injuries += _calculator.GetDamage(damage.SourceAttack, _stats);
+            
+            Debug.Log($"<color=green>[{damage.Attacking.Id} attacked {damage.Target.Id}]</color> : " +
+                      $"<color=red>[Damage: {_injuries}]</color>");
 
-        /// Нанести удар
-        public void DealDamage(IWeapon attackersWeapon)
-        {
-            _injuries += _calculator.GetDamage(attackersWeapon, _stats);
-            if (_injuries > MaxHealth)
+            if (_injuries >= MaxHealth)
             {
-                // TODO: привести к OnDie!!!
-                IsAlive = false;
-                OnDie?.Invoke(new Damage());
+                Debug.Log($"<color=red>[{damage.Target.Id}] is died</color>");
+
+                Death(damage);
             }
-                //Death(damage);
         }
 
         /// Исцеляем повреждения

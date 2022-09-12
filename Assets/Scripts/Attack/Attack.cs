@@ -10,7 +10,7 @@ namespace Rpg.Attack
         
         public void CharacterAttack(Character attackable, Character attacked)
         {
-            attacked.Health.DealDamage(attackable.WeaponController.CurrentWeapon);
+            // attacked.Health.DealDamage(attackable.WeaponController.CurrentWeapon);
         }
     }
 }

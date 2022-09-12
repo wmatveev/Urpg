@@ -8,7 +8,7 @@ namespace Rpg
 {
     public class Character : ITarget
     {
-        public readonly string Id;
+        public string Id { get; }
         public int Level;
 
         public Stats Stats          { get; private set; }

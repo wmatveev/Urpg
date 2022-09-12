@@ -4,6 +4,8 @@ namespace Rpg.Target
 {
     public interface ITarget
     {
+        string Id { get; }
+
         IHealthStatus Health { get; }
     }
 }
