@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
+using RPG.Character;
 using Rpg.Target;
+using TMPro;
 
 namespace RPG.Weapons
 {
     public class WeaponController : IWeaponController
     {
+        private Rpg.Character _character;
+
         public event Action<IWeapon> OnAttacked;
         public List<IWeapon> listOfWeapons { get; }
         public IWeapon CurrentWeapon { get; private set; }
@@ -14,7 +18,12 @@ namespace RPG.Weapons
         {
             listOfWeapons = new List<IWeapon>();
         }
-        
+
+        public void InitCharacter(Rpg.Character character)
+        {
+            _character = character;
+        }
+
         public void AddWeaponToCharacter(IWeapon weapon)
         {
             listOfWeapons.Add(weapon);
@@ -40,6 +49,8 @@ namespace RPG.Weapons
 
         public void Attack(ITarget target)
         {
+            Damage damage;
+            
             // TODO: CurrentWeapon.Shoot to tareget
             target.Health.DealDamage(CurrentWeapon);
             OnAttacked?.Invoke(CurrentWeapon);

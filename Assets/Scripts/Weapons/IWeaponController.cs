@@ -10,6 +10,7 @@ namespace RPG.Weapons
         List<IWeapon> listOfWeapons { get; }
         IWeapon CurrentWeapon { get; }
 
+        void InitCharacter(Rpg.Character character);
         void AddWeaponToCharacter(IWeapon weapon);
         void DropWeaponFromCharacter(IWeapon weapon);
         void SelectWeapon(int index);

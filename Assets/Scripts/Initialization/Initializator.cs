@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using RPG.Character;
 using RPG.Character.CharacterCreationFactory;
 using Rpg.TurnBased;
+using RPG.Weapons;
 using RPG.Weapons.DamageCalculation;
 using RPG.Weapons.WeaponsFactory;
 using UnityEngine;
@@ -53,6 +54,10 @@ namespace Rpg.Initialization
         {
             // Создаем персонажа
             Character character = _charactersFactory.CreateCharacter(id);
+
+            // Сохраняем в WeaponController персонажа, которому принадлежит WC
+            character.WeaponController.InitCharacter(character);
+
             if (isControlable)
             {
                 _controlables.Add(character);
@@ -70,11 +75,6 @@ namespace Rpg.Initialization
             // Добавляем в очередь
             _turnQueue.Enqueue(character);
         }
-
-        // private void DestroyCharacterView(Damage obj)
-        // {
-        //     Destroy(_enemy.gameObject);
-        // }
 
         private void CreateFactories(Balance balance)
         {

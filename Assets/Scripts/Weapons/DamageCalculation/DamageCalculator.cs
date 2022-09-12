@@ -23,14 +23,14 @@ namespace RPG.Weapons.DamageCalculation
 
         public int GetDamage(Damage damage, Stats stats)
         {
-            // Количество урона * на коэффициент от типа пули * на коэффициент от оружия – защита персонажа
-            int result = (int)(damage.Amount * 
-                _damageCoefOfCartridgeType[damage.CartridgeType] * _damageCoefOfWeaponType[damage.WeaponType] - stats.DamageProtection);
-
-            if (result <= 0)
-                return 0;
+            // // Количество урона * на коэффициент от типа пули * на коэффициент от оружия – защита персонажа
+            // int result = (int)(damage.Amount * 
+            //     _damageCoefOfCartridgeType[damage.CartridgeType] * _damageCoefOfWeaponType[damage.WeaponType] - stats.DamageProtection);
+            //
+            // if (result <= 0)
+            //     return 0;
             
-            return result;
+            return 0;
         }
 
         public int GetDamage(IWeapon attackersWeapon, Stats statsTarget)

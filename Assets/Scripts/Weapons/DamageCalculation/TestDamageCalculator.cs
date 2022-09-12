@@ -6,7 +6,7 @@ namespace RPG.Weapons.DamageCalculation
     {
         public int GetDamage(Damage damage, Stats stats)
         {
-            return damage.Amount;
+            return 0; // damage.Amount;
         }
 
         public int GetDamage(IWeapon attackersWeapon, Stats statsTarget)
