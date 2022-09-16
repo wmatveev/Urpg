@@ -50,8 +50,7 @@ namespace RPG.Weapons
         {
             Damage damage = new Damage(_character, target, CurrentWeapon);
 
-            // TODO: CurrentWeapon.Shoot to tareget
-            target.Health.DealDamage(damage);
+            CurrentWeapon.Shoot(damage);
             OnAttacked?.Invoke(CurrentWeapon);
         }
     }

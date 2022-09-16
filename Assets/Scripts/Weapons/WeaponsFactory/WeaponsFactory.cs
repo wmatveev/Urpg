@@ -19,6 +19,7 @@ namespace RPG.Weapons.WeaponsFactory
 
             _balans.Weapons.TryGetValue(idWeapon, out WeaponData weaponData);
 
+            // Создаем оружие
             switch (weaponData.Type)
             {
                 case TypesOfWeapons.Gun:
