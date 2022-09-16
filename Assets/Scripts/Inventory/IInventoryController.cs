@@ -4,6 +4,8 @@ namespace Rpg.Inventory
 {
     public interface IInventoryController
     {
+        Dictionary<string, int> inventory { get; }
+
         void AddObject();                   // Добавить предмет в инвентарь
         void DeleteObject();                // Удалить / выбросить предмет из инвентаря
         void TakeObjectFromInventory();     // Взять предмет из инвентаря
