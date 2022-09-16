@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Rpg;
 using RPG.Character;
 using RPG.Weapons;
+using RPG.Weapons.DamageCalculation;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = System.Random;
@@ -29,7 +30,13 @@ public class CharacterView : MonoBehaviour, IPointerClickHandler
     {
         Character = character;
         Character.WeaponController.OnAttacked += OnAttack;
+        Character.Health.OnDie += DestroyCharacter;
         // TODO: remove on character die. here and in logic (INIT class)
+    }
+
+    private void DestroyCharacter(Damage obj)
+    {
+        Destroy(this);
     }
 
     private void OnAttack(IWeapon obj)
