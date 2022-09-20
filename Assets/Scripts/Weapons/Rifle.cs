@@ -1,4 +1,5 @@
 using System.Data;
+using RPG.Character.CharacterCreationFactory;
 using Rpg.Target;
 using RPG.Weapons.DamageCalculation;
 

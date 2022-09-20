@@ -30,15 +30,6 @@ namespace RPG.Weapons
         public const int Knife          = 5;
     }
 
-    public struct WeaponData
-    {
-        public TypesOfWeapons Type;
-        public int CountCartridges;
-        public int Range;
-        public int ShotDamage;
-    }
-
-
     public enum TypesOfWeapons : int
     {
         /// Винтовка

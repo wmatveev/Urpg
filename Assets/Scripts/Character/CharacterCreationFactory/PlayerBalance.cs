@@ -16,6 +16,19 @@ namespace RPG.Character.CharacterCreationFactory
         public List<string> AvailableWeapons;
     }
 
+    public struct WeaponData
+    {
+        public TypesOfWeapons Type;
+        public int CountCartridges;
+        public int Range;
+        public int ShotDamage;
+    }
+
+    public struct InventoryData
+    {
+        public int Bullets;
+    }
+
     public class Balance
     {
         public Dictionary<string, PlayerBalance> PlayerBalance;
