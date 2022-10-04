@@ -26,13 +26,14 @@ namespace RPG.Character.CharacterCreationFactory
 
     public struct InventoryData
     {
-        public int Bullets;
+        public int GunBullets;
     }
 
     public class Balance
     {
         public Dictionary<string, PlayerBalance> PlayerBalance;
         public Dictionary<string, EnemyBalance>  EnemyBalance;
-        public Dictionary<string, WeaponData> Weapons;
+        public Dictionary<string, WeaponData>    Weapons;
+        public Dictionary<string, InventoryData> Inventory;
     }
 }

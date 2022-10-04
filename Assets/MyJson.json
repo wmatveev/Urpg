@@ -50,5 +50,10 @@
       "Range" : 200,
       "ShotDamage" : 20
     }
+  },
+  "Inventory": {
+    "Bullets" : {
+      "GunBullets" : 300
+    }
   }
 }
