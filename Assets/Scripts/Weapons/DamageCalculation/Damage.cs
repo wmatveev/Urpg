@@ -13,8 +13,8 @@ namespace RPG.Weapons.DamageCalculation
             SourceAttack = sourceAttack;
         }
 
-        public Rpg.Character Attacking;  // Атакующий
-        public ITarget Target;           // Цель
-        public IWeapon SourceAttack;     // Источник атаки
+        public Rpg.Character Attacking;        // Атакующий
+        public ITarget       Target;           // Цель
+        public IWeapon       SourceAttack;     // Источник атаки
     }
 }
