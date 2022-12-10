@@ -19,23 +19,22 @@ namespace RPG.Weapons.WeaponsFactory
 
             _balans.Weapons.TryGetValue(idWeapon, out WeaponData weaponData);
 
+            // weapon = new Weapon(weaponData.Type., 10000, weaponData.CountCartridges,
+            //     weaponData.Range, true, false);
+
             // Создаем оружие
             switch (weaponData.Type)
             {
                 case TypesOfWeapons.Gun:
-                    weapon = new Gun(weaponData);
+                    // weapon = new Gun(weaponData);
                     break;
                 case TypesOfWeapons.Rifle:
-                    weapon = new Rifle(weaponData);
                     break;
                 case TypesOfWeapons.AutomaticRifle:
-                    weapon = new AutomaticRifle(weaponData);
                     break;
                 case TypesOfWeapons.Shotgun:
-                    weapon = new Shotgun(weaponData);
                     break;
                 case TypesOfWeapons.Knife:
-                    weapon = new Knife(weaponData);
                     break;
 
                 default:

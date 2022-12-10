@@ -67,10 +67,10 @@ namespace Rpg.Initialization
 
             _turnController.SubscriptionByClick(view);
 
-            character.Health.OnHit += (dmg) =>
-            {
-                Debug.Log($"{id} was hitted!");
-            };
+            // character.Health.OnHit += (dmg) =>
+            // {
+            //     Debug.Log($"{id} was hitted!");
+            // };
 
             // Добавляем в очередь
             _turnQueue.Enqueue(character);

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Rpg;
 using RPG.Character;
+using RPG.Logs;
 using RPG.Weapons;
 using RPG.Weapons.DamageCalculation;
 using UnityEngine;
@@ -29,14 +30,18 @@ public class CharacterView : MonoBehaviour, IPointerClickHandler
     public void Init(Character character)
     {
         Character = character;
+        
         Character.WeaponController.OnAttacked += OnAttack;
-        Character.Health.OnDie += DestroyCharacter;
+        Character.Health.OnDie                += DestroyCharacter;
+        Character.Health.OnDieLog             += DamageLogs.DieLogConsoleOutput;
+        Character.Health.OnHitLog             += DamageLogs.HitLogConsoleOutput;
+
         // TODO: remove on character die. here and in logic (INIT class)
     }
 
     private void DestroyCharacter(Damage obj)
     {
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     private void OnAttack(IWeapon obj)

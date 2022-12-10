@@ -9,9 +9,11 @@ namespace RPG.Character
     public class CharacterHealth : IHealthStatus
     {
         [CanBeNull]
-        public event Action<Damage> OnHit;
+        // public event Action<Damage> OnHit;
         public event Action<Damage> OnDie;
-        
+        public event Action<Damage> OnDieLog;
+        public event Action<Damage, int> OnHitLog;
+
         /// Количество повреждения
         private int _injuries;               
         private readonly Stats _stats;
@@ -37,13 +39,12 @@ namespace RPG.Character
             // Суммируем количество повреждения
             _injuries += _calculator.GetDamage(damage.SourceAttack, _stats);
             
-            Debug.Log($"<color=green>[{damage.Attacking.Id} attacked {damage.Target.Id}]</color> : " +
-                      $"<color=red>[Damage: {_injuries}]</color>");
+            OnHitLog?.Invoke(damage, _injuries);
+            // Debug.Log($"<color=green>[{damage.Attacking.Id} attacked {damage.Target.Id}]</color> : " +
+            //           $"<color=red>[Damage: {_injuries}]</color>");
 
             if (_injuries >= MaxHealth)
             {
-                Debug.Log($"<color=red>[{damage.Target.Id}] is died</color>");
-
                 Death(damage);
             }
         }
@@ -62,6 +63,7 @@ namespace RPG.Character
             IsAlive = false;
 
             OnDie?.Invoke(damage);
+            OnDieLog?.Invoke(damage);
             // if (OnDie != null)
             //     OnDie();
 
