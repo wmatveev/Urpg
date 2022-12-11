@@ -6,7 +6,7 @@ namespace RPG.Weapons
 {
     public interface IWeapon
     {
-        string TypeOfWeapon { get; set; }
+        TypesOfWeapons TypeOfWeapon { get; set; }
 
         int CurrentBulletsAmount { set; get; }  // Количество патронов на текущий момент
         int TotalBulletsInClip   { set; get; }  // Общее количество патронов в обойме
@@ -14,7 +14,7 @@ namespace RPG.Weapons
         bool CanShoot { set; get; }             // Возможность стрелять
         bool IsReloading { set; get; }          // В процессе перезарядки
 
-        int ShotDamage      { get; }        // Урон от выстрела / броска
+        int ShotDamage      { get; }            // Урон от выстрела / броска
 
         ITarget Shoot(Damage damage);
     }

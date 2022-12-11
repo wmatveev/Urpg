@@ -1,3 +1,4 @@
+using RPG.Character.CharacterCreationFactory;
 using Rpg.Target;
 using RPG.Weapons.DamageCalculation;
 
@@ -5,22 +6,23 @@ namespace RPG.Weapons
 {
     public class Weapon : IWeapon
     {
-        public Weapon(string typeOfWeapon, int currentBulletsAmount, int totalBulletsInClip, int range, bool canShoot, bool isReloading)
+        public Weapon(WeaponData weaponData, int currentBulletsAmount, bool canShoot)
         {
-            TypeOfWeapon         = typeOfWeapon;
+            TypeOfWeapon         = weaponData.Type;
             CurrentBulletsAmount = currentBulletsAmount;
-            TotalBulletsInClip   = totalBulletsInClip;
-            Range                = range;
+            TotalBulletsInClip   = weaponData.CountCartridges;
+            Range                = weaponData.Range;
             CanShoot             = canShoot;
-            IsReloading          = isReloading;
+            IsReloading          = false;
         }
 
-        public string TypeOfWeapon      { get; set; }
-        public int CurrentBulletsAmount { get; set; }
-        public int TotalBulletsInClip   { get; set; }
-        public int Range                { get; set; }
-        public bool CanShoot            { get; set; }
-        public bool IsReloading         { get; set; }
+        public TypesOfWeapons TypeOfWeapon { get; set; }
+
+        public int    CurrentBulletsAmount { get; set; }
+        public int    TotalBulletsInClip   { get; set; }
+        public int    Range                { get; set; }
+        public bool   CanShoot             { get; set; }
+        public bool   IsReloading          { get; set; }
 
         public int ShotDamage { get; }
         

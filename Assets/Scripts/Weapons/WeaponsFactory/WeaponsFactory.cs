@@ -19,27 +19,25 @@ namespace RPG.Weapons.WeaponsFactory
 
             _balans.Weapons.TryGetValue(idWeapon, out WeaponData weaponData);
 
-            // weapon = new Weapon(weaponData.Type., 10000, weaponData.CountCartridges,
-            //     weaponData.Range, true, false);
-
             // Создаем оружие
-            switch (weaponData.Type)
-            {
-                case TypesOfWeapons.Gun:
-                    // weapon = new Gun(weaponData);
-                    break;
-                case TypesOfWeapons.Rifle:
-                    break;
-                case TypesOfWeapons.AutomaticRifle:
-                    break;
-                case TypesOfWeapons.Shotgun:
-                    break;
-                case TypesOfWeapons.Knife:
-                    break;
+            weapon = new Weapon(weaponData, 10000, true);
 
-                default:
-                    throw new Exception("Weapon not found");
-            }
+            // switch (weaponData.Type)
+            // {
+            //     case TypesOfWeapons.Gun:
+            //         break;
+            //     case TypesOfWeapons.Rifle:
+            //         break;
+            //     case TypesOfWeapons.AutomaticRifle:
+            //         break;
+            //     case TypesOfWeapons.Shotgun:
+            //         break;
+            //     case TypesOfWeapons.Knife:
+            //         break;
+            //
+            //     default:
+            //         throw new Exception("Weapon not found");
+            // }
 
             return weapon;
         }
