@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using RPG.Weapons;
+using Weapons;
 
-namespace RPG.Character.CharacterCreationFactory
+namespace Character.CharacterCreationFactory
 {
     public class PlayerBalance
     {

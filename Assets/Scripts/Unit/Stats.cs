@@ -1,4 +1,4 @@
-namespace RPG.Character
+namespace Character
 {
     public class Stats
     {

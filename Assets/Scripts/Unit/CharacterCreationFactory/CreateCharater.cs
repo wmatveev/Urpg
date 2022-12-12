@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Linq;
-using Rpg.Inventory;
-using RPG.Weapons;
-using RPG.Weapons.DamageCalculation;
-using RPG.Weapons.WeaponsFactory;
+using Weapons;
+using Weapons.DamageCalculation;
+using Weapons.WeaponsFactory;
 
-namespace RPG.Character.CharacterCreationFactory
+namespace Character.CharacterCreationFactory
 {
     public class CharactersFactory : ICharatersFactory
     {
@@ -20,13 +18,13 @@ namespace RPG.Character.CharacterCreationFactory
             _weaponsFactory   = weaponsFactory;
         }
 
-        public Rpg.Character CreateCharacter(string idCharacter)
+        public Character CreateCharacter(string idCharacter)
         {
-            Rpg.Character Character = null;
+            Character Character = null;
 
             if (_balance.PlayerBalance.TryGetValue(idCharacter, out var playerData))
             {
-                Character = new Rpg.Character(idCharacter, playerData.Stats, _damageCalculator);
+                Character = new Character(idCharacter, playerData.Stats, _damageCalculator);
 
                 // Бежим по списку оружия из json и создаем его
                 foreach (string i in playerData.AvailableWeapons) {
@@ -40,7 +38,7 @@ namespace RPG.Character.CharacterCreationFactory
             }
             else if (_balance.EnemyBalance.TryGetValue(idCharacter, out var enemyData))
             {
-                Character = new Rpg.Character(idCharacter, enemyData.Stats, _damageCalculator);
+                Character = new Character(idCharacter, enemyData.Stats, _damageCalculator);
 
                 // Бежим по списку оружия из json и создаем его
                 foreach (string i in enemyData.AvailableWeapons) {

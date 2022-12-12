@@ -1,10 +1,8 @@
 using System;
 using JetBrains.Annotations;
-using RPG.Weapons;
-using RPG.Weapons.DamageCalculation;
-using UnityEngine;
+using Weapons.DamageCalculation;
 
-namespace RPG.Character
+namespace Character
 {
     public class CharacterHealth : IHealthStatus
     {

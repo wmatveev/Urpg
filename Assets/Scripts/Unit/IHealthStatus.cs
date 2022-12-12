@@ -1,8 +1,7 @@
 ﻿using System;
-using RPG.Weapons;
-using RPG.Weapons.DamageCalculation;
+using Weapons.DamageCalculation;
 
-namespace RPG.Character
+namespace Character
 {
     public interface IHealthStatus
     {

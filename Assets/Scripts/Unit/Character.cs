@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
-using RPG.Character;
-using Rpg.Target;
-using RPG.Weapons;
-using RPG.Weapons.DamageCalculation;
+using Target;
+using Weapons;
+using Weapons.DamageCalculation;
 
-namespace Rpg
+namespace Character
 {
     public class Character : ITarget
     {
