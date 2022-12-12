@@ -1,4 +1,4 @@
-namespace RPG.Weapons
+namespace Weapons
 {
     // Перезарядка оружия
     public class WeaponReloading

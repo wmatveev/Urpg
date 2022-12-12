@@ -1,4 +1,4 @@
-namespace Rpg.Target
+namespace Target
 {
     // public class Target : ITarget
     // {

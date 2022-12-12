@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
-using Rpg.Target;
-using RPG.Weapons.DamageCalculation;
+using Target;
+using Unit;
+using Weapons.DamageCalculation;
 
-namespace RPG.Weapons
+namespace Weapons
 {
     public class WeaponController : IWeaponController
     {
-        private Rpg.Character _character;
+        private Character _character;
 
         public event Action<IWeapon> OnAttacked;
         public List<IWeapon> listOfWeapons { get; }
@@ -18,7 +19,7 @@ namespace RPG.Weapons
             listOfWeapons = new List<IWeapon>();
         }
 
-        public void InitCharacter(Rpg.Character character)
+        public void InitCharacter(Character character)
         {
             _character = character;
         }

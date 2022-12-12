@@ -1,7 +1,7 @@
 ﻿using System;
 using Weapons.DamageCalculation;
 
-namespace Character
+namespace Unit
 {
     public interface IHealthStatus
     {

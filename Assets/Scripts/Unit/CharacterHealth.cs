@@ -2,7 +2,7 @@ using System;
 using JetBrains.Annotations;
 using Weapons.DamageCalculation;
 
-namespace Character
+namespace Unit
 {
     public class CharacterHealth : IHealthStatus
     {

@@ -1,7 +1,6 @@
-﻿using System;
-using RPG.Character.CharacterCreationFactory;
+﻿using Unit.CharacterCreationFactory;
 
-namespace Rpg.Initialization
+namespace Initialization
 {
     public delegate void BalanceLoadCallback(Balance balance);
 

@@ -1,20 +1,17 @@
 using System;
 using UnityEngine;
 
-namespace Rpg
+public class Bullet : MonoBehaviour
 {
-    public class Bullet : MonoBehaviour
+    [SerializeField] private Rigidbody _rigidbody;
+
+    public void SetImpulse(Vector2 direction, float force)
     {
-        [SerializeField] private Rigidbody _rigidbody;
+        _rigidbody.AddForce( direction * force, (ForceMode)ForceMode2D.Impulse );
+    }
 
-        public void SetImpulse(Vector2 direction, float force)
-        {
-            _rigidbody.AddForce( direction * force, (ForceMode)ForceMode2D.Impulse );
-        }
-
-        private void OnCollisionEnter(Collision collision)
-        {
-            Destroy(gameObject);
-        }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
     }
 }

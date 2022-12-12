@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Rpg.UI
+namespace UI
 {
     public class MoveChange : MonoBehaviour
     {

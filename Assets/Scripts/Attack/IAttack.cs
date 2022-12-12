@@ -1,7 +1,8 @@
 ﻿
-using Rpg.Target;
+using Target;
+using Unit;
 
-namespace Rpg.Attack
+namespace Attack
 {
     public interface IAttack
     {

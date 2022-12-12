@@ -1,15 +1,12 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using Newtonsoft.Json;
-using RPG.Character;
-using RPG.Character.CharacterCreationFactory;
-using Rpg.TurnBased;
-using RPG.Weapons;
-using RPG.Weapons.DamageCalculation;
-using RPG.Weapons.WeaponsFactory;
+using TurnBased;
+using Unit;
+using Unit.CharacterCreationFactory;
 using UnityEngine;
+using Weapons.DamageCalculation;
+using Weapons.WeaponsFactory;
 
-namespace Rpg.Initialization
+namespace Initialization
 {
     // Создаем класс Initializator, в котором инициализируем все начальные объекты + вычитываем баланс
     public class Initializator : MonoBehaviour

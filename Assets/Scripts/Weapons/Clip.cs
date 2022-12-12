@@ -1,4 +1,4 @@
-namespace RPG.Weapons
+namespace Weapons
 {
     // Создание, пополнение обоймы
     public class Clip

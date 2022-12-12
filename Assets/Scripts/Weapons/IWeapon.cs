@@ -1,8 +1,7 @@
-using System;
-using Rpg.Target;
-using RPG.Weapons.DamageCalculation;
+using Target;
+using Weapons.DamageCalculation;
 
-namespace RPG.Weapons
+namespace Weapons
 {
     public interface IWeapon
     {

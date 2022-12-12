@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Rpg.TurnBased;
+using Unit;
 
-namespace Rpg
+namespace TurnBased
 {
     // Очередь ходов
     public class TurnQueue

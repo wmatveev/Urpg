@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-
-namespace RPG.Weapons
+namespace Weapons
 {
     public struct WeaponsAndOptions
     {

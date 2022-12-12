@@ -1,4 +1,4 @@
-﻿namespace RPG.Weapons.WeaponsFactory
+﻿namespace Weapons.WeaponsFactory
 {
     public interface IWeaponsFactory
     {

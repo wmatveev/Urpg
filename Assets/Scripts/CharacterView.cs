@@ -1,13 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Rpg;
-using RPG.Character;
-using RPG.Logs;
-using RPG.Weapons;
-using RPG.Weapons.DamageCalculation;
+using Logs;
+using Unit;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Weapons;
+using Weapons.DamageCalculation;
 using Random = System.Random;
 
 public class CharacterView : MonoBehaviour, IPointerClickHandler

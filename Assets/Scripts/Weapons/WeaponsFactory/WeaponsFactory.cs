@@ -1,7 +1,6 @@
-﻿using System;
-using RPG.Character.CharacterCreationFactory;
+﻿using Unit.CharacterCreationFactory;
 
-namespace RPG.Weapons.WeaponsFactory
+namespace Weapons.WeaponsFactory
 {
     public class WeaponsFactory : IWeaponsFactory
     {

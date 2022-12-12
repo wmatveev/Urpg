@@ -1,6 +1,6 @@
-using RPG.Character;
+using Unit;
 
-namespace Rpg.Target
+namespace Target
 {
     public interface ITarget
     {

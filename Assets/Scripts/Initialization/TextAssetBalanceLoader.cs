@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using RPG.Character.CharacterCreationFactory;
+using Unit.CharacterCreationFactory;
 using UnityEngine;
 
-namespace Rpg.Initialization
+namespace Initialization
 {
     public class TextAssetBalanceLoader : IBalanceProvider
     {

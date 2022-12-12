@@ -1,4 +1,4 @@
-namespace Rpg.Inventory
+namespace Inventory
 {
     public interface IItem
     {

@@ -1,4 +1,4 @@
-namespace Rpg.Inventory.InventoryFactory
+namespace Inventory.InventoryFactory
 {
     public class InventoryFactory : IInventoryFactory
     {

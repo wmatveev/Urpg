@@ -1,8 +1,7 @@
-﻿using RPG.Character;
-using Rpg.Target;
-using RPG.Weapons;
+﻿using Target;
+using Unit;
 
-namespace Rpg.Attack
+namespace Attack
 {
     public class Attack : IAttack
     {

@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Unit;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Rpg.TurnBased
+namespace TurnBased
 {
     public class TurnController : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using Target;
 using Weapons;
 using Weapons.DamageCalculation;
 
-namespace Character
+namespace Unit
 {
     public class Character : ITarget
     {

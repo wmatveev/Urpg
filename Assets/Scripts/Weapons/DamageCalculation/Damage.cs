@@ -1,20 +1,19 @@
-﻿using Rpg.Target;
-using RPG.Weapons;
-using UnityEngine;
+﻿using Target;
+using Unit;
 
-namespace RPG.Weapons.DamageCalculation
+namespace Weapons.DamageCalculation
 {
     public struct Damage
     {
-        public Damage(Rpg.Character attacking, ITarget target, IWeapon sourceAttack)
+        public Damage(Character attacking, ITarget target, IWeapon sourceAttack)
         {
             Attacking    = attacking;
             Target       = target;
             SourceAttack = sourceAttack;
         }
 
-        public Rpg.Character Attacking;        // Атакующий
-        public ITarget       Target;           // Цель
-        public IWeapon       SourceAttack;     // Источник атаки
+        public Character Attacking;        // Атакующий
+        public ITarget   Target;           // Цель
+        public IWeapon   SourceAttack;     // Источник атаки
     }
 }

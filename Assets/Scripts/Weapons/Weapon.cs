@@ -1,8 +1,8 @@
-using RPG.Character.CharacterCreationFactory;
-using Rpg.Target;
-using RPG.Weapons.DamageCalculation;
+using Target;
+using Unit.CharacterCreationFactory;
+using Weapons.DamageCalculation;
 
-namespace RPG.Weapons
+namespace Weapons
 {
     public class Weapon : IWeapon
     {

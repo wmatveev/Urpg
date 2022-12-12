@@ -1,11 +1,8 @@
-using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using RPG.Character;
-using RPG.Character.CharacterCreationFactory;
-using RPG.Weapons;
+using Unit.CharacterCreationFactory;
 
-namespace Rpg.Balans
+namespace Balans
 {
     public class GetCharactersBalans : IGetBalans
     {

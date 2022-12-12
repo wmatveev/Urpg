@@ -1,4 +1,4 @@
-﻿namespace Character.CharacterCreationFactory
+﻿namespace Unit.CharacterCreationFactory
 {
     public interface ICharatersFactory
     {

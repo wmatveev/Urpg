@@ -1,7 +1,7 @@
 ﻿using System;
-using Rpg.Target;
+using Unit;
 
-namespace Rpg.TurnBased
+namespace TurnBased
 {
     // Игровой ход
     public class GameTurn

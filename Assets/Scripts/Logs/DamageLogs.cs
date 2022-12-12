@@ -1,7 +1,7 @@
-using RPG.Weapons.DamageCalculation;
 using UnityEngine;
+using Weapons.DamageCalculation;
 
-namespace RPG.Logs
+namespace Logs
 {
     public static class DamageLogs
     {

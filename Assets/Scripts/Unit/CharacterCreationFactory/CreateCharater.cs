@@ -3,7 +3,7 @@ using Weapons;
 using Weapons.DamageCalculation;
 using Weapons.WeaponsFactory;
 
-namespace Character.CharacterCreationFactory
+namespace Unit.CharacterCreationFactory
 {
     public class CharactersFactory : ICharatersFactory
     {

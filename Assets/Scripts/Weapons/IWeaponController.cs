@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Rpg.Target;
+using Target;
+using Unit;
 
-namespace RPG.Weapons
+namespace Weapons
 {
     public interface IWeaponController
     {
@@ -10,7 +11,7 @@ namespace RPG.Weapons
         List<IWeapon> listOfWeapons { get; }
         IWeapon CurrentWeapon { get; }
 
-        void InitCharacter(Rpg.Character character);
+        void InitCharacter(Character character);
         void AddWeaponToCharacter(IWeapon weapon);
         void DropWeaponFromCharacter(IWeapon weapon);
         void SelectWeapon(int index);

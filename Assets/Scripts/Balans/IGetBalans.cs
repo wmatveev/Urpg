@@ -1,6 +1,6 @@
-using RPG.Character.CharacterCreationFactory;
+using Unit.CharacterCreationFactory;
 
-namespace Rpg.Balans
+namespace Balans
 {
     public interface IGetBalans
     {

@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using RPG.Character;
+using Unit;
 
-
-namespace RPG.Weapons.DamageCalculation
+namespace Weapons.DamageCalculation
 {
     public class DamageCalculator : IDamageCalculator
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Rpg.Inventory
+namespace Inventory
 {
     public interface IInventoryController
     {
