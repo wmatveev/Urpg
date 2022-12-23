@@ -5,7 +5,7 @@ namespace Weapons
 {
     public interface IWeapon
     {
-        TypesOfWeapons TypeOfWeapon { get; set; }
+        TypesOfWeapons TypeOfWeapon { get; }
 
         int CurrentBulletsAmount { set; get; }  // Количество патронов на текущий момент
         int TotalBulletsInClip   { set; get; }  // Общее количество патронов в обойме

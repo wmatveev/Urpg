@@ -12,23 +12,26 @@ namespace Weapons
             CurrentBulletsAmount = currentBulletsAmount;
             TotalBulletsInClip   = weaponData.CountCartridges;
             Range                = weaponData.Range;
+            ShotDamage           = weaponData.ShotDamage;
             CanShoot             = canShoot;
             IsReloading          = false;
         }
 
-        public TypesOfWeapons TypeOfWeapon { get; set; }
+        public TypesOfWeapons TypeOfWeapon { get; }
 
         public int    CurrentBulletsAmount { get; set; }
         public int    TotalBulletsInClip   { get; set; }
         public int    Range                { get; set; }
         public bool   CanShoot             { get; set; }
         public bool   IsReloading          { get; set; }
+        public int    ShotDamage           { get; set; }
 
-        public int ShotDamage { get; }
-        
         public ITarget Shoot(Damage damage)
         {
-            throw new System.NotImplementedException();
+            damage.Target.Health.DealDamage(damage);
+
+            return damage.Target;
+            // throw new System.NotImplementedException();
         }
     }
 }
