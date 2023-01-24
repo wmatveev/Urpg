@@ -502,6 +502,8 @@ MonoBehaviour:
   _material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _camera: {fileID: 677436721}
   _maxDistance: 5
+  _terrain: {fileID: 1345299819}
+  _cellSize: 1
 --- !u!1 &717340577
 GameObject:
   m_ObjectHideFlags: 0

@@ -119,23 +119,5 @@ namespace CharacterControl
 
             GL.End();
         }
-
-        public void DrawTestPath(Material material, Color color)
-        {
-            Vector3 current = Vector3.zero;
-            Vector3 target  = Vector3.zero;
-
-            GL.Begin(GL.LINES);
-            material.SetPass(0);
-            GL.Color(color);
-
-            current = new Vector3(1f,1f,1f);
-            target  = new Vector3(8.86f,1,1.43f);
-
-            GL.Vertex(current);
-            GL.Vertex(target);
-
-            GL.End();
-        }
     }
 }

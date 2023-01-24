@@ -17,6 +17,5 @@ namespace CharacterControl
         Vector3 MaxAllowedDistanceCoordinate(float maxDistance);
 
         void DrawPath(NavMeshPath path, Material material, Color color);
-        void DrawTestPath(Material material, Color color);
     }
 }

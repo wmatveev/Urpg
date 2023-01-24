@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using CharacterControl;
+using GameGrid;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,13 +12,17 @@ public class PostRenerTest : MonoBehaviour
     [SerializeField] private Material     _material;
     [SerializeField] private Camera       _camera;
     [SerializeField] private float        _maxDistance;
+    [SerializeField] private Terrain      _terrain;
+    [SerializeField] private float        _cellSize;
 
     private IPath _path;
+    private IGridOnFloor _gameFloorGrid;
     
     // Start is called before the first frame update
     void Start()
     {
-        _path = new GetPath(_camera);
+        _path          = new GetPath(_camera);
+        _gameFloorGrid = new GridOnFloor(_cellSize, _material, _terrain);
     }
 
     // Update is called once per frame
@@ -46,6 +51,8 @@ public class PostRenerTest : MonoBehaviour
     
     private void OnPostRender()
     {
+        _gameFloorGrid.DrawGrid();
+        
         if (!_mainHeroAgent.hasPath)
             DrawLineOfPlannedPath();
     }
